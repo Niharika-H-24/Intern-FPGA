@@ -70,6 +70,7 @@ The .pcf file assigns the module's ports to actual physical pins on the VSDSquad
 To build the bitstream and flash it to the VSDSquadron FPGA Mini board, follow these steps:
 
 *Prerequisites*
+
 Make sure the following tools are installed (as per the datasheet instructions):
 - yosys (for synthesis)
 - nextpnr-ice40 (for place & route)
