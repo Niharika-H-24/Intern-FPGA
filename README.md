@@ -14,7 +14,7 @@ This work is done as part of a task to:
 
 | File/Folders       | Description |
 |--------------------|-------------|
-| top.vnnnn          | Verilog code to control RGB LEDs using internal oscillator |
+| top.v              | Verilog code to control RGB LEDs using internal oscillator |
 | VSDSquadronFM.pcf  | Pin Constraint File mapping logical signals to FPGA pins |
 | Makefile           | Build and flash automation using Yosys, nextpnr, and iceprog |
 | top.bin            | Bitstream file generated after synthesis and place & route |
