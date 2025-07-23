@@ -23,12 +23,12 @@ This work is done as part of a task to:
 
 ## Verilog Code Overview - top.v
 
-### Module Name: top
-### Inputs and Outputs:
+*Module Name*: top
+*Inputs and Outputs*:
 - hw_clk (Input): Clock input from FPGA’s onboard oscillator
 - led_red, led_green, led_blue (Outputs): Connected to RGB LED pins
 - testwire (Output): Used for testing/debugging the internal counter
-### Internal Components:
+*Internal Components*:
 1. SB_HFOSC (Internal Oscillator)
    - Generates a fixed frequency clock (approx. 48 MHz).
    - Output is connected to the clk wire in the design.
@@ -42,10 +42,9 @@ This work is done as part of a task to:
      - led_green = cnt[22]
      - led_blue = cnt[21]
    - This creates a simple color pattern that changes over time.
-
  4. Test Output
    - The testwire is assigned cnt[20], useful for debugging or connecting to a logic analyzer.
-### Summary:
+*Summary*:
 The design uses a built-in oscillator and a counter to blink the RGB LEDs with varying frequencies. It’s a great example of internal clock usage, basic counter logic, and RGB output control in FPGA designs.
 
 
@@ -61,61 +60,58 @@ The .pcf file assigns the module's ports to actual physical pins on the VSDSquad
 | hw_clk   | 20       | Connected to oscillator clock |
 | testwire | 17       | Debug signal output |
 
-### How it connects:
+*How it connects*:
 - These assignments match the board’s datasheet.
 - When the bitstream is loaded, these pin connections ensure the correct LEDs blink.
 
 
-## Building and Flashing the FPGA
+### Building and Flashing the FPGA
 
 To build the bitstream and flash it to the VSDSquadron FPGA Mini board, follow these steps:
 
-###  Prerequisites
+*Prerequisites*
 Make sure the following tools are installed (as per the datasheet instructions):
 - yosys (for synthesis)
 - nextpnr-ice40 (for place & route)
 - icepack (to generate bitstream)
 - iceprog (to flash to the board)
 This generates the bit stream file.
-
-### Build the Bitstream
+*Build the Bitstream*
 In terminal:
 make clean
 make build
-
-### Flash the board
+*Flash the board*
 Connect the FPGA board via USB and run
 sudo make flash
 
 
 ## Observations and Results
 
-###  What happened after flashing:
+*What happened after flashing*:
 - The RGB LED on the VSDSquadron board started blinking in different colors.
 - The color changes are controlled by the internal counter using different bits for each color:
   - led_red blinks slowest (bit 23)
   - led_green blinks slightly faster (bit 22)
   - led_blue blinks even faster (bit 21)
 
-### Image
+*Image*
 
 
 ## Challenges Faced and Learnings
 
-### Challenges:
+*Challenges*:
 - Understanding the pin mapping from .pcf and matching it with the board’s datasheet.
 - Figuring out how the internal oscillator works SB_HFOSC and how the counter generates delays.
-- Setting up the required tools (`yosys`, `nextpnr`, `iceprog`) and flashing using `Makefile`.
-
-### 💡 Learnings:
+- Setting up the required tools yosys, 
+  nextpnr, iceprog and flashing using  Makefile.
+*Learnings*:
 - How to write and analyze basic Verilog modules for FPGA.
 - Using internal resources like oscillators and counters.
 - Mapping design signals to real-world pins on the board.
 - Synthesizing, placing, routing, and flashing Verilog designs on actual hardware.
 
----
 
-## 📦 Final Project Summary
+##  Final Project Summary
 
 This project used the VSDSquadron FPGA Mini board to blink an RGB LED using Verilog. It helped reinforce concepts in:
 - Verilog design
