@@ -18,7 +18,6 @@ This work is done as part of a task to:
 | VSDSquadronFM.pcf  | Pin Constraint File mapping logical signals to FPGA pins |
 | Makefile           | Build and flash automation using Yosys, nextpnr, and iceprog |
 | top.bin            | Bitstream file generated after synthesis and place & route |
-|  images            | Contains photos of the working board or terminal logs |
 | README.md          | Documentation of the entire project |
 
 ## Verilog Code Overview - top.v
@@ -95,7 +94,6 @@ sudo make flash
   - led_green blinks slightly faster (bit 22)
   - led_blue blinks even faster (bit 21)
 
-*Image*
 
 
 ## Challenges Faced and Learnings
