@@ -43,7 +43,7 @@ This work is done as part of a task to:
      - led_blue = cnt[21]
    - This creates a simple color pattern that changes over time.
  4. Test Output
-   - The testwire is assigned cnt[20], useful for debugging or connecting to a logic analyzer.
+     The testwire is assigned cnt[20], useful for debugging or connecting to a logic analyzer.
 *Summary*:
 The design uses a built-in oscillator and a counter to blink the RGB LEDs with varying frequencies. It’s a great example of internal clock usage, basic counter logic, and RGB output control in FPGA designs.
 
